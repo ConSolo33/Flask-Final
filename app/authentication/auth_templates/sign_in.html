@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container text-center mt-5 mx-auto
+    bg-image img-fluid w-100"
+    style="background-image: url('../static/images/writing.jpg');
+    height: 100vh;
+    object-fit: cover;">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 justify-content-center text-light text-center p-5 rounded bg-dark bg-opacity-75">
+            <h2>Sign In</h2>    
+            {% include 'forms.html' %}
+        </div>
+        <div class="col-4"></div>
+    </div>
+</section>
+<footer class="bg-dark text-light text-center p-3">© Connor Solawetz 2023 -- Images sourced from Unplash</footer>
+
+
+{% endblock %}

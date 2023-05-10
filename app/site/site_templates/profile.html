@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="text-light text-center shadow mt-5 
+    bg-image img-fluid w-100"
+    style="background-image: url('../static/images/writing.jpg');
+    height: 100vh;
+    object-fit: cover;">
+        <div class="container p-5 col-6 bg-dark bg-opacity-75">
+            <div class="row">
+                <div class="d-md-flex align-items-center justify-content-evenly">
+                    <h1 class="col text-center">User Profile Details:</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container p-5 col-6 bg-dark bg-opacity-75">
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item">Email: {{ current_user.email }}</li>
+                    <li class="list-group-item">ID: {{ current_user.user_id }} </li> 
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light text-center p-3">© Connor Solawetz 2023 -- Images sourced from Unplash</footer>
+
+{% endblock %}

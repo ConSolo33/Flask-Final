@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-light text-center shadow mt-5 bg-image img-fluid w-100"
+    style="background-image: url('../static/images/writing.jpg');
+    height: 100vh;
+    object-fit: cover;">
+    <div class="container p-5 col-4 bg-dark bg-opacity-75 rounded"> 
+        <div class="row">
+            <div class="d-md-flex align-items-center justify-content-evenly">
+                <h1 class="col text-center">Writing Prompt Ideas API</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-md-flex align-items-center justify-content-evenly">
+                <p class="col text-center"><br>Create an account to store all of your
+                writing ideas in one place!</p>
+            </div>
+        </div>
+        {% if current_user.is_authenticated %}
+        <div class="row mt-5">
+            <div class="d-md-flex align-items-center justify-content-evenly">
+                <a href="{{ url_for('auth.logout') }}" 
+                class="btn btn-dark text-light">Log Out</a>
+            </div>
+        </div>
+
+        {% else %}
+        <div class="row mt-5">
+            <div class="d-md-flex align-items-center justify-content-evenly">
+                <a href="{{ url_for('auth.signin') }}" 
+                class="btn btn-dark text-light">Sign In</a>
+                <a href="{{ url_for('auth.signup') }}"
+                class="btn btn-dark text-light">Sign Up</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<footer class="bg-dark text-light text-center p-3">© Connor Solawetz 2023 -- Images sourced from Unplash</footer>
+{% endblock %}
